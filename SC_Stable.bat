@@ -26,6 +26,7 @@ echo Временные файлы успешно созданы!
 echo Инициализация завершена!
 cls
 : mainmenu
+cls
 echo Добро пожаловать в SuperCleaner. Выберите пункт.
 echo.
 echo 1.) Очистка ПК
@@ -390,4 +391,5 @@ echo.
 pause
 
 goto clean
+
 
