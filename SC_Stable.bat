@@ -55,6 +55,7 @@ if %var%==3 goto mainmenu
 : blur
 cls
 echo Пожалуйста подождите...
+cd C:\CoolVladOs\temp\sc4console
 regsvr32 "%~dp0ExplorerBlurMica.dll"
 echo Перезапускаем explorer.exe
 taskkill /F /IM explorer.exe >nul
@@ -73,6 +74,7 @@ goto modif
 : noblur
 cls
 echo Пожалуйста подождите...
+cd C:\CoolVladOs\temp\sc4console
 regsvr32 /u "%~dp0ExplorerBlurMica.dll"
 echo Перезапускаем explorer.exe
 taskkill /F /IM explorer.exe >nul
@@ -128,8 +130,8 @@ echo 17.) Выход в главное меню
 echo.
 set /p var=Выберите вариант:
 if %var%==1 goto full
-if %var%==2 goto modif
-if %var%==3 goto about
+if %var%==2 goto autostart
+if %var%==3 goto autostop
 if %var%==4 goto localtemp
 if %var%==5 goto systemp
 if %var%==6 goto cash
@@ -386,4 +388,5 @@ echo 3. Посмотрите папки пользователя (такие, к
 echo.
 echo.
 pause
+
 goto clean
