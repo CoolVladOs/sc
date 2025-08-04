@@ -3,7 +3,7 @@ echo Please allow administrator previleges!
 cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  cmd /u /c echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && ""%~s0"" %Apply%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
 echo Initializing...
 chcp 65001
-title SuperCleaner v4.0 (Console Version)
+title SuperCleaner v4.1 BETA (Console Version)
 echo Done!
 cls
 echo Пожалуйста подождите...
@@ -93,7 +93,7 @@ goto modif
 
 : about
 cls
-echo SuperCleaner v4.0 (Console Version)
+echo SuperCleaner v4.1 (BETA) (Console Version)
 echo Maded By CoolVladOs
 echo.
 echo https://t.me/CoolVladOs
@@ -126,8 +126,9 @@ echo 12.) Очистить кэш буфера обмена
 echo 13.) Очистить кэш Prefetch
 echo 14.) Очистить кэш Java
 echo 15.) Очистить дампы памяти
-echo 16.) Советы по очистке памяти
-echo 17.) Выход в главное меню
+echo 16.) Очистить кэш драйверов
+echo 17.) Советы по очистке памяти
+echo 18.) Выход в главное меню
 echo.
 set /p var=Выберите вариант:
 if %var%==1 goto full
@@ -145,8 +146,9 @@ if %var%==12 goto clipboard
 if %var%==13 goto prefetch
 if %var%==14 goto java
 if %var%==15 goto dmp
-if %var%==16 goto tips
-if %var%==17 goto mainmenu
+if %var%==16 goto driver
+if %var%==17 goto tips
+if %var%==18 goto mainmenu
 
 : full
 cls
@@ -214,6 +216,8 @@ del /q/f/s "%USERPROFILE%\AppData\Local\Packages\Microsoft.SkypeApp_kzf8qxf38zg5
 del /q/f/s %AppData%\vlc\art
 del /q/f/s %USERPROFILE%\AppData\Local\TeamViewer\EdgeBrowserControl\Persistent\518004909B1945429DCFDF9727D8D545\EBWebView\Default\Cache\Cache_Data
 del /q/f/s %USERPROFILE%\AppData\Local\TeamViewer\BuddyListCache
+del /q /f /s "C:\ProgramData\NVIDIA Corporation\Downloader"
+del /q /f /s C:\Windows\System32\DriverStore\FileRepository
 del /q/f/s %USERPROFILE%\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TempState
 del /q/f/s "%USERPROFILE%\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView\Default\Code Cache\js"
 cls
@@ -392,4 +396,10 @@ pause
 
 goto clean
 
+: хули ты код смотришь???
 
+: driver
+cls
+echo Пожалуйста подождите
+del /q /f /s "C:\ProgramData\NVIDIA Corporation\Downloader"
+del /q /f /s C:\Windows\System32\DriverStore\FileRepository
