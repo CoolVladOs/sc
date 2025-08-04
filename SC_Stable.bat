@@ -3,7 +3,7 @@ echo Please allow administrator previleges!
 cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  cmd /u /c echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && ""%~s0"" %Apply%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
 echo Initializing...
 chcp 65001
-title SuperCleaner v4.1 BETA (Console Version)
+title SuperCleaner v4.1 BETA 2 (Console Version)
 echo Done!
 cls
 echo Пожалуйста подождите...
@@ -93,7 +93,7 @@ goto modif
 
 : about
 cls
-echo SuperCleaner v4.1 (BETA) (Console Version)
+echo SuperCleaner v4.1 (BETA 2) (Console Version)
 echo Maded By CoolVladOs
 echo.
 echo https://t.me/CoolVladOs
@@ -127,8 +127,9 @@ echo 13.) Очистить кэш Prefetch
 echo 14.) Очистить кэш Java
 echo 15.) Очистить дампы памяти
 echo 16.) Очистить кэш драйверов
-echo 17.) Советы по очистке памяти
-echo 18.) Выход в главное меню
+echo 17.) Очистить память с помощью стандартных средств Windows (cleanmgr)
+echo 18.) Советы по очистке памяти
+echo 19.) Выход в главное меню
 echo.
 set /p var=Выберите вариант:
 if %var%==1 goto full
@@ -147,8 +148,9 @@ if %var%==13 goto prefetch
 if %var%==14 goto java
 if %var%==15 goto dmp
 if %var%==16 goto driver
-if %var%==17 goto tips
-if %var%==18 goto mainmenu
+if %var%==17 goto windows
+if %var%==18 goto tips
+if %var%==19 goto mainmenu
 
 : full
 cls
@@ -218,7 +220,20 @@ del /q/f/s %USERPROFILE%\AppData\Local\TeamViewer\EdgeBrowserControl\Persistent\
 del /q/f/s %USERPROFILE%\AppData\Local\TeamViewer\BuddyListCache
 del /q /f /s "C:\ProgramData\NVIDIA Corporation\Downloader"
 del /q /f /s C:\Windows\System32\DriverStore\FileRepository
+cleanmgr /autoclean
+del /q /f /s C:\Intel\Logs
+del /q /f /s C:\Program Files\Google\Chrome\Application\138.0.7204.184\Installer
 del /q/f/s %USERPROFILE%\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TempState
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 1\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 2\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 3\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 4\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 5\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 6\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 7\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 8\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 9\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 10\Cache"
 del /q/f/s "%USERPROFILE%\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView\Default\Code Cache\js"
 cls
 echo Операция успешно завершена.
@@ -267,7 +282,9 @@ goto clean
 : cash
 del /q/f/s "%HOMEPATH%\Local Settings\Temp"
 del /q/f/s %windir%\Logs
+C:\Program Files\Google\Chrome\Application\138.0.7204.184\Installer
 del /q/f/s %windir%\SoftwareDistribution
+del /q /f /s C:\Intel\Logs
 del /q/f/s "%userprofile%\AppData\Local\Microsoft\Windows\Explorer"
 del /q/f/s "%userprofile%\AppData\Local\Microsoft\Office\UnsavedFiles"
 del /q/f/s C:\Windows\Logs
@@ -301,6 +318,16 @@ del /q/f/s "%userprofile%\AppData\Local\Google\Chrome\User Data\Default\Cache"
 del /q/f/s "%userprofile%\AppData\Local\Yandex\YandexBrowser\User Data\Default\Cache"
 del /q/f/s "%userprofile%\AppData\Local\Mozilla\Firefox\Profiles\папка профиля\cache2"
 del /q/f/s "%userprofile%\AppData\Local\Opera Software\Opera Stable"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 1\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 2\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 3\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 4\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 5\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 6\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 7\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 8\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 9\Cache"
+del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 10\Cache"
 cls
 echo Операция успешно завершена.
 timeout /t 2 >nul
@@ -403,3 +430,18 @@ cls
 echo Пожалуйста подождите
 del /q /f /s "C:\ProgramData\NVIDIA Corporation\Downloader"
 del /q /f /s C:\Windows\System32\DriverStore\FileRepository
+cls
+echo Операция успешно завершена.
+timeout /t 2 >nul
+goto clean
+
+: windows
+cls
+echo Пожалуйста подождите...
+cd C:\Windows\System32
+cleanmgr /autoclean
+cd C:\CoolVladOs\Temp\sc4console
+cls
+echo Операция успешно завершена.
+timeout /t 2 >nul
+goto clean
