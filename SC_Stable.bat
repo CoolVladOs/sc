@@ -3,7 +3,7 @@ echo Please allow administrator previleges!
 cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  cmd /u /c echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && ""%~s0"" %Apply%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
 echo Initializing...
 chcp 65001
-title SuperCleaner v4.1 BETA 2 (Console Version)
+title SuperCleaner v4.1 BETA 4 (Console Version)
 echo Done!
 cls
 echo Пожалуйста подождите...
@@ -94,7 +94,7 @@ goto modif
 
 : about
 cls
-echo SuperCleaner v4.1 (BETA 2) (Console Version)
+echo SuperCleaner v4.1 (BETA 4) (Console Version)
 echo Maded By CoolVladOs
 echo.
 echo https://t.me/CoolVladOs
@@ -267,6 +267,7 @@ goto clean
 cls
 del /q/f/s %TEMP%\
 del /q/f/s "%USERPROFILE%\Local Settings\Temp"
+del /q/f/s %AppData%\Microsoft\Windows\Recent\
 cls
 echo Операция успешно завершена.
 timeout /t 2 >nul
@@ -477,5 +478,6 @@ cls
 echo Операция успешно завершена.
 timeout /t 2 >nul
 goto clean
+
 
 
