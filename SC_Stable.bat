@@ -220,7 +220,6 @@ del /q/f/s %AppData%\vlc\art
 del /q/f/s %USERPROFILE%\AppData\Local\TeamViewer\EdgeBrowserControl\Persistent\518004909B1945429DCFDF9727D8D545\EBWebView\Default\Cache\Cache_Data
 del /q/f/s %USERPROFILE%\AppData\Local\TeamViewer\BuddyListCache
 del /q /f /s "C:\ProgramData\NVIDIA Corporation\Downloader"
-del /q /f /s C:\Windows\System32\DriverStore\FileRepository
 cleanmgr /autoclean
 del /q /f /s C:\Intel\Logs
 del /q /f /s C:\Program Files\Google\Chrome\Application\138.0.7204.184\Installer
@@ -232,10 +231,12 @@ del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 4\Cache"
 del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 5\Cache"
 del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 6\Cache"
 del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 7\Cache"
+del /q /f /s C:\$SysReset\Logs
 del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 8\Cache"
 del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 9\Cache"
 del /q /f /s "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 10\Cache"
 del /q/f/s "%USERPROFILE%\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView\Default\Code Cache\js"
+del /q /f /s C:\Windows\System32\DriverStore\FileRepository
 cls
 echo Операция успешно завершена.
 timeout /t 2 >nul
@@ -296,6 +297,7 @@ del /q/f/s C:\ProgramData\BlueStacks_nxt\Logs
 del /q/f/s %USERPROFILE%\AppData\Local\TeamViewer\EdgeBrowserControl\Persistent\518004909B1945429DCFDF9727D8D545\EBWebView\Default\Cache\Cache_Data
 del /q/f/s %USERPROFILE%\AppData\Local\TeamViewer\BuddyListCache
 del /q/f/s %USERPROFILE%\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TempState
+del /q /f /s C:\$SysReset\Logs
 del /q/f/s "%USERPROFILE%\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView\Default\Code Cache\js"
 cls
 echo Операция успешно завершена.
@@ -475,4 +477,5 @@ cls
 echo Операция успешно завершена.
 timeout /t 2 >nul
 goto clean
+
 
