@@ -39,6 +39,7 @@ if %var%==1 goto clean
 if %var%==2 goto modif
 if %var%==3 goto about
 if %var%==4 goto tgk
+if %var%==мненадоелобытьнатуралом goto famboi
 
 :modif
 cls
@@ -390,6 +391,35 @@ echo Операция успешно завершена.
 timeout /t 2 >nul
 goto clean
 
+: famboi
+cls
+echo Тебе серьёзно надоело быть натуралом??
+echo.
+pause
+cls
+echo Ну тогда...
+echo Ты теперь фембой!
+color d7
+title FemboyCleaner
+echo.
+echo ⣿⡟⢸⣿⣿⣿⣄⠹⣷⠰⣤⣌⡙⢿⠏⣠⣿⣿⣿⣿⡇⣸
+echo ⣿⡇⣾⣿⣿⣿⣿⡧⠈⣀⣹⣿⣿⣦⣰⣿⣿⣿⣿⣿⡇⣿
+echo ⣿⡇⢿⣿⣿⣿⣿⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿
+echo ⣿⣇⢸⣿⡿⠿⠿⠿⠿⣿⣿⣿⣿⠿⠟⠛⠛⢻⣿⣿⢁⣿
+echo ⡿⠿⠄⠻⡖⢰⡆⠀⠀⢸⣿⣿⡇⠀⠀⢸⡆⢹⠋⠁⠚⣿
+echo ⣷⡀⠲⣶⡇⢺⣷⡀⢀⡾⠿⣿⣷⣀⣀⣾⠇⣸⡿⠋⣰⣿
+echo ⣿⣿⢁⣦⣀⣡⣿⣿⡿⠿⠛⠻⠟⢻⣿⣥⣀⣽⣷⡌⢻⣿
+echo ⣿⣿⣬⣭⣌⡙⠛⠿⣷⣶⣾⣿⣿⣿⠛⢛⣀⣬⣥⣤⣼⣿
+echo ⣿⣿⣿⣿⣿⣿⣄⠒⢶⣾⣿⣿⣿⣿⣧⡈⢿⣿⣿⣿⣿⣿
+echo ⣿⣿⣿⣿⣿⣿⡏⠐⢻⣿⣿⣿⣿⣿⣿⣧⠘⣿⣿⣿⣿⣿
+echo ⣿⣿⣿⣿⣿⣿⣿⠃⣼⣿⣿⣿⣿⣿⣿⣿⡇⢻⣿⣿⣿⣿
+echo.
+echo.
+pause
+color 07
+cls
+goto mainmenu
+
 : prefetch
 del /q/f/s C:\Windows\Prefetch
 cls
@@ -445,3 +475,4 @@ cls
 echo Операция успешно завершена.
 timeout /t 2 >nul
 goto clean
+
