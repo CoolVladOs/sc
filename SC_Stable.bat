@@ -8,7 +8,7 @@ cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) &&
 echo Initializing...
 echo [LOG] [%DATE%, %TIME%] Detected administrator access! >> C:\CoolVladOs\temp\sc4console\LOG.TXT
 chcp 65001
-title SuperCleaner v5.0 (Console Version)
+title SuperCleaner v5.1 (Console Version)
 echo Done!
 cls
 echo Пожалуйста подождите...
@@ -25,7 +25,8 @@ echo [LOG] [%DATE%, %TIME%] Initializating... >> C:\CoolVladOs\temp\sc4console\L
 echo Готово!
 echo Скачивание необходимых файлов...
 echo [LOG] [%DATE%, %TIME%] Downloading file from https://github.com/CoolVladOs/sc/raw/refs/heads/main/ExplorerBlurMica.dll >> C:\CoolVladOs\temp\sc4console\LOG.TXT
-curl -o ExplorerBlurMica.dll https://github.com/CoolVladOs/sc/raw/refs/heads/main/ExplorerBlurMica.dll
+del /q /f ExplorerBlurMica.dll
+curl -o ExplorerBlurMica.dll https://github.com/CoolVladOs/sc/blob/d4a8e761882f5fddc3d5269f1529e7713be7e302/explor.dll
 echo [LOG] [%DATE%, %TIME%] File downloaded! >> C:\CoolVladOs\temp\sc4console\LOG.TXT
 echo Готово! 1/2
 echo [LOG] [%DATE%, %TIME%] Downloading file from https://github.com/CoolVladOs/sc/raw/refs/heads/main/SuperCleaner_AutorunScript.bat >> C:\CoolVladOs\temp\sc4console\LOG.TXT
@@ -116,7 +117,7 @@ goto modif
 : about
 echo [LOG] [%DATE%, %TIME%] Going to ABOUT >> C:\CoolVladOs\temp\sc4console\LOG.TXT
 cls
-echo SuperCleaner v5.0 (Console Version)
+echo SuperCleaner v5.1 (Console Version)
 echo Maded By CoolVladOs
 echo.
 echo https://t.me/CoolVladOs
@@ -203,6 +204,8 @@ del /q /f /s "%userprofile%\AppData\Roaming\Telegram Desktop\tdata\user_data#8"
 del /q /f /s "%userprofile%\AppData\Roaming\Telegram Desktop\tdata\user_data#9"
 del /q /f /s "%userprofile%\AppData\Roaming\Telegram Desktop\tdata\user_data#10"
 del /q/f/s %windir%\Temp
+del /q /f /s C:\ProgramData\USOShared\Logs\User
+del /q /f /s C:\ProgramData\USOShared\Logs\System
 del /q /f /s C:\Windows\ModemLogs
 del /q /f /s C:\Windows\assembly\temp
 del /q /f /s C:\Windows\assembly\tmp
@@ -214,6 +217,37 @@ del /q /f /s C:\Windows\Performance\WinSAT
 del /q/f/s C:\Windows\Minidump
 schtasks.exe /Run /TN "\Microsoft\Windows\Servicing\StartComponentCleanup"
 del C:\Windows\MEMORY.DMP
+del /q /f /s "%AppData%\IObit\Driver Booster\Logs"
+del /q /f /s "%localappdata%\Package Cache"
+del /q /f /s "%localappdata%\Microsoft\Edge\User Data\Crashpad\reports"
+del /q /f /s "%localappdata%\Microsoft\Internet Explorer\CacheStorage"
+del /q /f "%localappdata%\Microsoft\Internet Explorer\brndlog.txt"
+del /q /f "%localappdata%\Microsoft\Internet Explorer\brndlog.bak"
+del /q /f "%localappdata%\Microsoft\Internet Explorer\ie4uinit-ClearIconCache.log"
+del /q /f "%localappdata%\Microsoft\Internet Explorer\ie4uinit-UserConfig.log"
+del /q /f /s "%localappdata%\Microsoft\Media Player\Transcoded Files Cache"
+del /q /f /s "%localappdata%\Microsoft\Media Player\Кэш файлов графики"
+del /q /f /s %localappdata%\Microsoft\OneDrive\logs
+del /q /f /s %localappdata%\Microsoft\OneDrive\setup\logs
+del /q /f /s %localappdata%\Microsoft\TokenBroker\Cache
+del /q /f /s "%localappdata%\Microsoft\Feeds Cache"
+del /q /f /s "%localappdata%\Microsoft\CLR_v4.0\ngen.log"
+del /q /f /s "%localappdata%\Microsoft\CLR_v4.0_32\ngen.log"
+del /q /f /s %localappdata%\Microsoft\Windows\ActionCenterCache
+del /q /f /s %localappdata%\Microsoft\Windows\AppCache
+del /q /f /s %localappdata%\Microsoft\Windows\Caches\
+del /q /f %localappdata%\Microsoft\Windows\Explorer\iconcache*
+del /q /f %localappdata%\Microsoft\Windows\Explorer\thumbcache*
+del /q /f /s %localappdata%\Microsoft\Windows\INetCache
+del /q /f /s %localappdata%\Microsoft\Windows\INetCache\IE
+del /q /f /s %localappdata%\Microsoft\Windows\IECompactCache
+del /q /f /s %localappdata%\Microsoft\Windows\IECompactUACache
+del /q /f /s %localappdata%\Microsoft\Windows\PPBCompatUaCache
+del /q /f /s %localappdata%\Microsoft\Windows\PPBCompatCache
+del /q /f /s %localappdata%\Microsoft\Windows\WebCache
+del /q /f /s %localappdata%\pip\cache
+del /q /f /s %localappdata%\Roblox\logs
+del /q /f /s %localappdata%\Roblox\Downloads
 del /q/f/s "%userprofile%\AppData\Local\Microsoft\Terminal Server Client\Cache"
 del /q/f/s %TEMP%\
 del /q/f/s "C:\Windows\ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows\DeliveryOptimization"
@@ -244,6 +278,47 @@ del /q /f /s Y:\$Recycle.bin
 del /q /f /s Z:\$Recycle.bin
 del /q /f /s U:\$Recycle.bin
 del /q /f /s F:\$Recycle.bin
+del /q /f /s %appdata%\Zoom\logs
+del /q /f /s %appdata%\Zoom\reports
+del /q /f %appdata%\Zoom\Installer.log
+del /q /f /s %appdata%\vlc\crashdump
+del /q /f /s "%appdata%\Adobe\Flash Player\NativeCache"
+del /q /f /s %userprofile%\AppData\LocalLow\Microsoft\CryptnetUrlCache
+del /q /f /s C:\ProgramData\HP\logs
+del /q /f /s C:\ProgramData\Microsoft\Diagnosis\Temp
+del /q /f /s C:\ProgramData\Microsoft\Diagnosis\ETLLogs
+del /q /f /s C:\ProgramData\Microsoft\EdgeUpdate\Log
+del /q /f /s C:\ProgramData\Microsoft\MapData\mapscache
+del /q /f C:\ProgramData\Microsoft\MapData\events.log
+del /q /f /s C:\ProgramData\Microsoft\Provisioning\AssetCache
+del /q /f /s C:\ProgramData\Microsoft\Search\Data\Temp
+del /q /f /s C:\ProgramData\Microsoft\Windows\Caches
+del /q /f /s C:\ProgramData\Microsoft\Windows\DeviceMetadataCache
+del /q /f /s C:\ProgramData\Microsoft\Windows\LfSvc\Cache
+del /q /f /s C:\ProgramData\Microsoft\Windows\Power Efficiency Diagnostics
+del /q /f /s C:\ProgramData\Microsoft\Windows\WER\Temp
+del /q /f /s C:\ProgramData\Microsoft\Windows\WindowsApps\Microsoft.GamingServices_29.103.2001.0_x64__8wekyb3d8bbwe\Cache
+del /q /f /s C:\ProgramData\Microsoft\Windows\WindowsApps\Microsoft.GamingServices*\Cache
+del /q /f /s "C:\ProgramData\Package Cache"
+del /q /f /s C:\ProgramData\Packages\Microsoft*\*\SystemAppData\Helium\Cache
+del /q /f /s "C:\Program Files (x86)\Google\GoogleUpdater\crx_cache"
+del /q /f /s "C:\Program Files\Google\GoogleUpdater\crx_cache"
+del /q /f /s "C:\Program Files (x86)\Google\GoogleUpdater\*\Crashpad"
+del /q /f /s "C:\Program Files (x86)\Google\GoogleUpdater\updater.log"
+del /q /f /s "C:\Program Files (x86)\Google\GoogleUpdater\updater.log.old"
+del /q /f /s "C:\Program Files\Google\GoogleUpdater\*\Crashpad"
+del /q /f /s "C:\Program Files\Google\GoogleUpdater\updater.log"
+del /q /f /s "C:\Program Files\Google\GoogleUpdater\updater.log.old"
+del /q /f /s "C:\Program Files\Google\Chrome\Application\*\Installer"
+del /q /f /s "C:\Program Files (x86)\Google\Chrome\Application\*\Installer"
+del /q /f /s "C:\Program Files (x86)\Microsoft\Edge\Application\*\Installer"
+del /q /f /s "C:\Program Files\Microsoft\Edge\Application\*\Installer"
+del /q /f /s "C:\Program Files\Google\Chrome\Application\*\Installer"
+del /q /f /s "C:\Program Files (x86)\Microsoft\EdgeCore\*\Installer"
+del /q /f /s "C:\Program Files (x86)\Microsoft\EdgeUpdate\Download"
+del /q /f /s "C:\Program Files (x86)\Microsoft\EdgeWebView\Application\*\Installer"
+del /q /f /s "C:\Program Files (x86)\Microsoft\Temp"
+del /q /f /s "C:\Program Files\Microsoft\Temp"
 del /q /f /s Q:\$Recycle.bin
 del /q/f/s %AppData%\Microsoft\Windows\Recent\
 del /q/f/s %userprofile%\AppData\Local\Microsoft\Windows\FileHistory
@@ -258,6 +333,8 @@ del /q/f/s %AppData%\vlc\art
 del /q/f/s %USERPROFILE%\AppData\Local\TeamViewer\EdgeBrowserControl\Persistent\518004909B1945429DCFDF9727D8D545\EBWebView\Default\Cache\Cache_Data
 del /q/f/s %USERPROFILE%\AppData\Local\TeamViewer\BuddyListCache
 del /q /f /s "C:\ProgramData\NVIDIA Corporation\Downloader"
+cls
+echo Пожалуйста подождите...
 cleanmgr /autoclean
 del /q /f /s C:\Intel\Logs
 del /q /f /s C:\Program Files\Google\Chrome\Application\138.0.7204.184\Installer
@@ -345,6 +422,8 @@ del /q /f /s C:\Windows\SystemTemp
 del /q /f /s C:\Windows\debug
 del /q /f /s C:\Windows\ModemLogs
 del /q/f/s C:\Windows\Minidump
+del /q /f /s C:\ProgramData\USOShared\Logs\User
+del /q /f /s C:\ProgramData\USOShared\Logs\System
 del /q /f /s C:\Windows\Performance\WinSAT
 del C:\Windows\MEMORY.DMP
 cls
@@ -361,15 +440,87 @@ del /q /f /s C:\Windows\assembly\tmp
 del /q /f /s C:\Windows\assembly\NativeImages_v4.0.30319_64\Temp
 del /q /f /s C:\Windows\assembly\NativeImages_v4.0.30319_32\Temp
 del /q /f /s C:\Windows\assembly\NativeImages_v2.0.50727_64\Temp
+del /q /f /s %appdata%\Zoom\logs
+del /q /f /s %appdata%\Zoom\reports
+del /q /f %appdata%\Zoom\Installer.log
+del /q /f /s %appdata%\vlc\crashdump
+del /q /f /s "%appdata%\Adobe\Flash Player\NativeCache"
+del /q /f /s %userprofile%\AppData\LocalLow\Microsoft\CryptnetUrlCache
+del /q /f /s C:\ProgramData\HP\logs
+del /q /f /s C:\ProgramData\Microsoft\Diagnosis\Temp
+del /q /f /s C:\ProgramData\Microsoft\Diagnosis\ETLLogs
+del /q /f /s C:\ProgramData\Microsoft\EdgeUpdate\Log
+del /q /f /s C:\ProgramData\Microsoft\MapData\mapscache
+del /q /f C:\ProgramData\Microsoft\MapData\events.log
+del /q /f /s C:\ProgramData\Microsoft\Provisioning\AssetCache
+del /q /f /s C:\ProgramData\Microsoft\Search\Data\Temp
+del /q /f /s C:\ProgramData\Microsoft\Windows\Caches
+del /q /f /s C:\ProgramData\Microsoft\Windows\DeviceMetadataCache
+del /q /f /s C:\ProgramData\Microsoft\Windows\LfSvc\Cache
+del /q /f /s C:\ProgramData\Microsoft\Windows\Power Efficiency Diagnostics
+del /q /f /s C:\ProgramData\Microsoft\Windows\WER\Temp
+del /q /f /s C:\ProgramData\Microsoft\Windows\WindowsApps\Microsoft.GamingServices_29.103.2001.0_x64__8wekyb3d8bbwe\Cache
+del /q /f /s C:\ProgramData\Microsoft\Windows\WindowsApps\Microsoft.GamingServices*\Cache
+del /q /f /s "C:\ProgramData\Package Cache"
+del /q /f /s C:\ProgramData\Packages\Microsoft*\*\SystemAppData\Helium\Cache
+del /q /f /s "C:\Program Files (x86)\Google\GoogleUpdater\crx_cache"
+del /q /f /s "C:\Program Files\Google\GoogleUpdater\crx_cache"
+del /q /f /s "C:\Program Files (x86)\Google\GoogleUpdater\*\Crashpad"
+del /q /f /s "C:\Program Files (x86)\Google\GoogleUpdater\updater.log"
+del /q /f /s "C:\Program Files (x86)\Google\GoogleUpdater\updater.log.old"
+del /q /f /s "C:\Program Files\Google\GoogleUpdater\*\Crashpad"
+del /q /f /s "C:\Program Files\Google\GoogleUpdater\updater.log"
+del /q /f /s "C:\Program Files\Google\GoogleUpdater\updater.log.old"
+del /q /f /s "C:\Program Files\Google\Chrome\Application\*\Installer"
+del /q /f /s "C:\Program Files (x86)\Google\Chrome\Application\*\Installer"
+del /q /f /s "C:\Program Files (x86)\Microsoft\Edge\Application\*\Installer"
+del /q /f /s "C:\Program Files\Microsoft\Edge\Application\*\Installer"
+del /q /f /s "C:\Program Files\Google\Chrome\Application\*\Installer"
+del /q /f /s "C:\Program Files (x86)\Microsoft\EdgeCore\*\Installer"
+del /q /f /s "C:\Program Files (x86)\Microsoft\EdgeUpdate\Download"
+del /q /f /s "C:\Program Files (x86)\Microsoft\EdgeWebView\Application\*\Installer"
+del /q /f /s "C:\Program Files (x86)\Microsoft\Temp"
+del /q /f /s "C:\Program Files\Microsoft\Temp"
 del /q /f /s C:\Windows\assembly\NativeImages_v2.0.50727_32\Temp
 del /q /f /s C:\Windows\security\logs
 del /q/f/s %windir%\Logs
+del /q /f /s "%AppData%\IObit\Driver Booster\Logs"
 C:\Program Files\Google\Chrome\Application\138.0.7204.184\Installer
 del /q/f/s %windir%\SoftwareDistribution
 del /q /f /s C:\Intel\Logs
 del /q/f/s "%userprofile%\AppData\Local\Microsoft\Windows\Explorer"
 del /q/f/s "%userprofile%\AppData\Local\Microsoft\Office\UnsavedFiles"
 del /q/f/s C:\Windows\Logs
+del /q /f /s "%localappdata%\Package Cache"
+del /q /f /s "%localappdata%\Microsoft\Edge\User Data\Crashpad\reports"
+del /q /f /s "%localappdata%\Microsoft\Internet Explorer\CacheStorage"
+del /q /f "%localappdata%\Microsoft\Internet Explorer\brndlog.txt"
+del /q /f "%localappdata%\Microsoft\Internet Explorer\brndlog.bak"
+del /q /f "%localappdata%\Microsoft\Internet Explorer\ie4uinit-ClearIconCache.log"
+del /q /f "%localappdata%\Microsoft\Internet Explorer\ie4uinit-UserConfig.log"
+del /q /f /s "%localappdata%\Microsoft\Media Player\Transcoded Files Cache"
+del /q /f /s "%localappdata%\Microsoft\Media Player\Кэш файлов графики"
+del /q /f /s %localappdata%\Microsoft\OneDrive\logs
+del /q /f /s %localappdata%\Microsoft\OneDrive\setup\logs
+del /q /f /s %localappdata%\Microsoft\TokenBroker\Cache
+del /q /f /s "%localappdata%\Microsoft\Feeds Cache"
+del /q /f /s "%localappdata%\Microsoft\CLR_v4.0\ngen.log"
+del /q /f /s "%localappdata%\Microsoft\CLR_v4.0_32\ngen.log"
+del /q /f /s %localappdata%\Microsoft\Windows\ActionCenterCache
+del /q /f /s %localappdata%\Microsoft\Windows\AppCache
+del /q /f /s %localappdata%\Microsoft\Windows\Caches\
+del /q /f %localappdata%\Microsoft\Windows\Explorer\iconcache*
+del /q /f %localappdata%\Microsoft\Windows\Explorer\thumbcache*
+del /q /f /s %localappdata%\Microsoft\Windows\INetCache
+del /q /f /s %localappdata%\Microsoft\Windows\INetCache\IE
+del /q /f /s %localappdata%\Microsoft\Windows\IECompactCache
+del /q /f /s %localappdata%\Microsoft\Windows\IECompactUACache
+del /q /f /s %localappdata%\Microsoft\Windows\PPBCompatUaCache
+del /q /f /s %localappdata%\Microsoft\Windows\PPBCompatCache
+del /q /f /s %localappdata%\Microsoft\Windows\WebCache
+del /q /f /s %localappdata%\pip\cache
+del /q /f /s %localappdata%\Roblox\logs
+del /q /f /s %localappdata%\Roblox\Downloads
 del /q/f/s %USERPROFILE%\AppData\Local\Microsoft\OneDrive\setup
 del /q/f/s "%USERPROFILE%\AppData\Local\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalCache\Roaming\Microsoft\Skype for Store\Cache\Cache_Data"
 del /q/f/s %AppData%\vlc\art
@@ -702,3 +853,15 @@ cls
 echo Операция успешно завершена.
 timeout /t 2 >nul
 goto optimiz
+
+: tgk
+cls
+echo ТГК Создателя: https://t.me/CoolVladOs
+echo ТГК с обновлениями: https://t.me/SuperCleanerUpdate
+echo.
+curl qrenco.de/https://t.me/CoolVladOs
+echo.
+echo.
+pause
+goto mainmenu
+
