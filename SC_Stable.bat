@@ -9,7 +9,7 @@ echo Initializing...
 echo [LOG] [%DATE%, %TIME%] Detected administrator access! >> C:\CoolVladOs\temp\sc4console\LOG.TXT
 
 
-set version=5.1.1
+set version=5.2.1
 
 
 echo [LOG] [%DATE%, %TIME%] Version: 5.1 >> C:\CoolVladOs\temp\sc4console\LOG.TXT
@@ -1125,3 +1125,4 @@ echo ваша супержопа тепеьр насак
 title NosokCleaner
 pause
 goto mainmenu
+
