@@ -9,7 +9,7 @@ echo Initializing...
 echo [LOG] [%DATE%, %TIME%] Detected administrator access! >> C:\CoolVladOs\temp\sc4console\LOG.TXT
 
 
-set version=5.2
+set version=5.1.1
 
 
 echo [LOG] [%DATE%, %TIME%] Version: 5.1 >> C:\CoolVladOs\temp\sc4console\LOG.TXT
@@ -152,6 +152,7 @@ if %var%==3 goto optimiz
 if %var%==4 goto about
 if %var%==5 goto tgk
 if %var%==мненадоелобытьнатуралом goto famboi
+if %var%==NOSOK1909 goto nosok
 
 :modif
 echo [LOG] [%DATE%, %TIME%] Going to MODIF >> C:\CoolVladOs\temp\sc4console\LOG.TXT
@@ -253,7 +254,8 @@ echo 16.) Очистить кэш драйверов
 echo 17.) Очистить память с помощью стандартных средств Windows (cleanmgr)
 echo 18.) Очистка с помощью утилиты DISM (Занимает много времени)
 echo 19.) Советы по очистке памяти
-echo 20.) Выход в главное меню
+echo 20.) Полное сканирование ПК на временные файлы [Новая функция]
+echo 21.) Выход в главное меню
 echo.
 set /p var=Выберите вариант:
 if %var%==1 goto full
@@ -275,7 +277,8 @@ if %var%==16 goto driver
 if %var%==17 goto windows
 if %var%==18 goto dism
 if %var%==19 goto tips
-if %var%==20 goto mainmenu
+if %var%==20 goto scan
+if %var%==21 goto mainmenu
 if %var%== goto clean
 
 : full
@@ -585,15 +588,6 @@ del /q /f /s "%%i\temp\*.*"
 for /d %%i in ("C:\Program Files\Google\Chrome\Application\*") do (
 del /q /f /s "%%i\Installer\*.*"
 )
-for /d /r C:\ %%i in (temp, cache, temporary, tmp, log, logs) do (
-    del /q /f /s "%%i"
-)
-for /d /r C:\ %%i in (*temp*, *cache*, *temporary*, *tmp*, *log*, *logs*) do (
-    del /q /f /s "%%i"
-)
-for /d /r C:\ %%i in (*temp*.*, *cache*.*, *temporary*.*, *tmp*.*, *log*.*, *logs*.*) do (
-    del /q /f /s "%%i"
-)
 cls
 echo Пожалуйста подождите...
 cleanmgr /autoclean
@@ -660,6 +654,34 @@ del /q /f /s C:\Windows\Performance\WinSAT
 del C:\Windows\MEMORY.DMP
 cls
 echo [LOG] [%DATE%, %TIME%] Operation completed! >> C:\CoolVladOs\temp\sc4console\LOG.TXT
+echo Операция успешно завершена.
+timeout /t 2 >nul
+goto clean
+
+: scan
+cls
+echo [LOG] [%DATE%, %TIME%] Scan utility started >> C:\CoolVladOs\temp\sc4console\LOG.TXT
+echo Добро пожаловать в утилиту для сканирования ПК на наличие временных файлов.
+echo Данное сканирование идёт от 1 до 20 часов. (в зависимости от количества файлов на диске)
+echo Нажмите любую клавишу для начала. Приятного ожидания :3
+echo.
+echo.
+pause
+cls
+echo [LOG] [%DATE%, %TIME%] Scanning started by user. >> C:\CoolVladOs\temp\sc4console\LOG.TXT
+echo Идёт сканирование... Просто ждите и всё
+for /d /r C:\ %%i in (temp, cache, temporary, tmp, log, logs) do (
+    del /q /f /s "%%i"
+)
+for /d /r C:\ %%i in (*temp*, *cache*, *temporary*, *tmp*, *log*, *logs*) do (
+    del /q /f /s "%%i"
+)
+for /d /r C:\ %%i in (*temp*.*, *cache*.*, *temporary*.*, *tmp*.*, *log*.*, *logs*.*) do (
+    del /q /f /s "%%i"
+)
+echo [LOG] [%DATE%, %TIME%] Scanning ended. (cash) >> C:\CoolVladOs\temp\sc4console\LOG.TXT
+echo [LOG] [%DATE%, %TIME%] Operation completed! >> C:\CoolVladOs\temp\sc4console\LOG.TXT
+cls
 echo Операция успешно завершена.
 timeout /t 2 >nul
 goto clean
@@ -1097,4 +1119,9 @@ echo.
 pause
 goto mainmenu
 
-
+: nosok
+cls
+echo ваша супержопа тепеьр насак
+title NosokCleaner
+pause
+goto mainmenu
