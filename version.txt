@@ -1,0 +1,2 @@
+[SETTINGS]
+version = 6.1
